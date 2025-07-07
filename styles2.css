@@ -1,0 +1,446 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f2f7f9, #e6f2ff); /* Soft cool gradient */
+  color: #333;
+  padding-top: 80px; /* Push content below fixed top bar */
+}
+
+/* Top Bar */
+.top-bar {
+  width: 100%;
+  background: linear-gradient(to right, #00B8D9, #0096C7);
+  color: white;
+  padding: 16px 24px;
+  font-size: 26px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+
+/* Push content below top bar */
+body {
+  padding-top: 80px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #023047;
+}
+
+#status {
+  text-align: center;
+  font-size: 18px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.dot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #00B8D9;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: #0096C7;
+}
+
+#gaze-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: crimson;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#lastUpdated {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  color: #555;
+}
+
+.news-line {
+  background: #FFFFFF;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.news-line:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.news-line a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.news-line a:hover {
+  color: #FF6B6B;
+  text-decoration: underline;
+}
+
+.news-line div {
+  margin-top: 8px;
+  line-height: 1.5;
+  color: #444;
+  font-size: 15px;
+}
+
+/* Hide webcam preview overlays */
+#webgazerVideoFeed,
+#webgazerFaceOverlay,
+#webgazerFaceFeedbackBox {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* BackToTop*/
+#backToTop {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #005f99;
+}
+
+.news-line {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-line:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/*Loader*/
+.loader{
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007acc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* ---------------- DARK THEME ---------------- */
+body.dark {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+}
+
+body.dark .top-bar {
+  background: linear-gradient(to right, #0b3c5d, #1c587a);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark h1, 
+body.dark h2,
+body.dark #status,
+body.dark #lastUpdated {
+  color: #e0f2f1;
+}
+
+body.dark .dot {
+  background: #4dd0e1;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .dot:hover {
+  background-color: #00acc1;
+}
+
+body.dark #gaze-dot {
+  background-color: #ff5252;
+}
+
+body.dark .news-line {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.04);
+}
+
+body.dark .news-line:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.06);
+}
+
+body.dark .news-line a {
+  color: #81d4fa;
+}
+
+body.dark .news-line a:hover {
+  color: #ff8a80;
+}
+
+body.dark .news-line div {
+  color: #ccc;
+}
+
+body.dark #backToTop {
+  background-color: #1565c0;
+  color: #fff;
+}
+
+body.dark #backToTop:hover {
+  background-color: #0d47a1;
+}
+
+body.dark .loader {
+  border-top: 4px solid #81d4fa;
+}
+
+
+/* Smooth theme transitions */
+body, .top-bar, .news-line, #themeToggle {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.refresh-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+.news-title a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.news-title a:hover {
+  text-decoration: underline;
+}
+
+.news-time {
+  font-size: 13px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.news-description {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.font-size-controls {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.font-size-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #007acc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.font-size-controls button:hover {
+  background-color: #005f99;
+}
+
+body.small-font {
+  font-size: 14px;
+}
+
+body.medium-font {
+  font-size: 16px;
+}
+
+body.large-font {
+  font-size: 19px;
+}
+
+/* Top Bar Controls Group */
+.top-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Top Bar Button Styles */
+.top-controls button,
+.font-size-group button {
+  background-color: #ffffff22;
+  color: white;
+  border: 1px solid #ffffff55;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.top-controls button:hover,
+.font-size-group button:hover {
+  background-color: #ffffff44;
+}
+
+/* Dark Theme Overrides */
+body.dark .top-controls button,
+body.dark .font-size-group button {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #888;
+}
+
+body.dark .top-controls button:hover,
+body.dark .font-size-group button:hover {
+  background-color: #444;
+}
+
+/* Remove old container spacing */
+.refresh-container,
+.font-size-controls {
+  display: none;
+}
+
+.menu-wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+#menuToggle {
+  background-color: #ffffff22;
+  color: white;
+  border: 1px solid #ffffff55;
+  padding: 6px 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#menuToggle:hover {
+  background-color: #ffffff44;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1002;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.dropdown-header {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.dropdown-section {
+  margin-bottom: 16px;
+}
+
+.dropdown-section button {
+  background-color: #00b8d9;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+
+.font-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.font-buttons button {
+  flex: 1;
+  padding: 6px 0;
+}
+
+/* Dark mode dropdown */
+body.dark .dropdown-content {
+  background-color: #2a2a2a;
+  color: #ddd;
+}
+
+body.dark .dropdown-header {
+  color: #ddd;
+}
+
+body.dark .dropdown-section button {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark .dropdown-section button:hover {
+  background-color: #555;
+}
+
+
