@@ -258,9 +258,7 @@ body, .top-bar, .news-line, #themeToggle {
   text-decoration: none;
 }
 
-.news-title a:hover {
-  text-decoration: underline;
-}
+
 
 .news-time {
   font-size: 13px;
