@@ -5,6 +5,7 @@ import joblib
 from flask_cors import CORS
 import json
 import subprocess
+import os
 app = Flask(__name__)
 CORS(app)
 
@@ -87,4 +88,3 @@ def run_pipeline():
 
 if __name__ == '__main__':
     app.run()
-
