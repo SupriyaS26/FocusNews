@@ -14,4 +14,4 @@ A real-time Indian news summarization system with gaze tracking and attention-ba
 
 1. 'python server.py'
 2. 'python pipeline.py'
-3. Open 'http://localhost:5500/ui.html' in browser
+3. Open 'http://localhost:5500/dashboard.html' in browser
