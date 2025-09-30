@@ -13,5 +13,5 @@ A real-time Indian news summarization system with gaze tracking and attention-ba
 ## How to run
 
 1. 'python server.py'
-2. 'python pipeline2.py'
+2. 'python pipeline.py'
 3. Open 'http://localhost:5500/ui.html' in browser
